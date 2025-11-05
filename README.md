@@ -1,5 +1,6 @@
 ## F25 Backend API Practice
 
-CHANGES! Check out this diff ;)
 
-Laith Taher
+NUWIT and Sandbox workshop on November 4th on backend
+
+Natasha Neeck
