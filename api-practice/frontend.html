@@ -34,7 +34,13 @@
   
     // TODO: Implement deleteUser function
     async function deleteUser() {
-
+      const name = document.getElementById("nameInput").value;
+      const res = await fetch(baseUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name })
+      });
+      getUsers();
     }
     getUsers();
   </script>
