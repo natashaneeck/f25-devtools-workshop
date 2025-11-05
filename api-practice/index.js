@@ -33,7 +33,20 @@ app.post("/users", (req, res) => {
 
 // TODO: DELETE a user (Try to recycle as much code from app.post as possible!)
 app.delete("/users", (req, res) => {
+  const { name } = req.body;
+    if (!name) {
+      res.status(400).send("Missing name in req.body");
+      return;
+    }
 
+    const indexOfName = users.indexOf(name);
+    if (indexOfName == -1) {
+      res.status(404).send('User ${name} not found');
+      return;
+    }
+
+    users.splice(name);
+    res.send(`User ${name} removed successfully`);
 });
 
 app.listen(port, () => {
